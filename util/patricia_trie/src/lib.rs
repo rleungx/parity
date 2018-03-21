@@ -29,6 +29,9 @@ extern crate ethcore_logger;
 extern crate trie_standardmap as standardmap;
 
 #[macro_use]
+extern crate error_chain;
+
+#[macro_use]
 extern crate log;
 
 use std::{fmt, error};

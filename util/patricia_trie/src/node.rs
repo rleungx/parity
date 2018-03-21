@@ -63,7 +63,7 @@ impl<'a> Node<'a> {
 			// an empty branch index.
 			Prototype::Data(0) => Ok(Node::Empty),
 			// something went wrong.
-			_ => Err(DecoderError::Custom("Rlp is not valid."))
+			_ => bail!("Rlp is not valid.")
 		}
 	}
 

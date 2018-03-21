@@ -84,7 +84,7 @@ impl Decodable for DatabaseValue {
 			let k = r.val_at(0)?;
 			let v = DBValue::from_slice(r.at(1)?.data()?);
 			Ok((k, v))
-		}).collect::<Result<Vec<_>, _>>()?;
+		}).collect::<Result<Vec<_>, DecoderError>>()?;
 		let deletes = rlp.list_at(2)?;
 
 		let value = DatabaseValue {

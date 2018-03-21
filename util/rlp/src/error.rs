@@ -36,6 +36,12 @@ pub enum DecoderError {
 	Custom(&'static str),
 }
 
+impl From<&'static str> for DecoderError {
+	fn from(val: &'static str) -> Self {
+		DecoderError::Custom(val)
+	}
+}
+
 impl StdError for DecoderError {
 	fn description(&self) -> &str {
 		"builder error"
